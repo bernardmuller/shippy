@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package consignment;
 
-option go_package = "github.com/bernardmuller/shippy-service-consignment/proto/consignment";
+option go_package = "github.com/bernardmuller/shippy/shippy-service-consignment/proto/consignment";
 
 service ShippingService {
   rpc CreateConsignment(Consignment) returns (Response) {}
