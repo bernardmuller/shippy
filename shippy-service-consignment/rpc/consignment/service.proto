@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package consignment;
+package twirp.example.consignment;
+option go_package = "github.com/bernardmuller/shippy";
 
-option go_package = "github.com/bernardmuller/shippy/shippy-service-consignment/proto/consignment";
-
-service ShippingService {
+service ConsignmentService {
   rpc CreateConsignment(Consignment) returns (Response) {}
+  rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
 message Consignment {
@@ -23,7 +23,10 @@ message Container {
   string user_id = 4;
 }
 
+message GetRequest {}
+
 message Response {
   bool created = 1;
   Consignment consignment = 2;
+  repeated Consignment consignments = 3;
 }
